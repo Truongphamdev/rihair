@@ -22,7 +22,7 @@ small { font-size: .62em; }
 .btn--ghost { background: transparent; color: var(--primary); box-shadow: inset 0 0 0 1.5px var(--primary); }
 .btn--sm { min-height: 44px; padding: 0 20px; font-size: 15px; }
 .btn--lg { min-height: 58px; font-size: 17px; text-transform: uppercase; letter-spacing: .01em; }
-.btn--block { width: 100%; }
+.btn--block { width: 100%; white-space: normal; text-align: center; line-height: 1.2; padding-block: 12px; }
 .btn i { font-size: 18px; transition: transform .5s var(--ease-out); }
 .btn:hover i { transform: translateX(3px); }
 
@@ -43,6 +43,7 @@ small { font-size: .62em; }
 .hero::before { width: 520px; height: 520px; left: -160px; top: -120px; background: var(--blob-1); }
 .hero::after { width: 560px; height: 560px; right: -180px; bottom: -200px; background: var(--blob-2); }
 .hero__grid { display: grid; grid-template-columns: minmax(0, 1.22fr) minmax(0, 1fr); gap: 32px; align-items: start; }
+.hero__grid > * { min-width: 0; }
 .pill { display: inline-block; padding: 9px 20px; border-radius: 999px; background: var(--pill-bg); color: #fff; font-weight: 800; font-size: 15px; text-transform: uppercase; letter-spacing: .02em; box-shadow: 0 10px 24px -12px var(--primary); }
 .hero__title { margin-top: 18px; font-weight: 900; line-height: .92; letter-spacing: -0.02em; text-transform: uppercase; }
 .hero__brand { display: block; font-size: clamp(56px, 8vw, 104px); background: var(--brand-grad); -webkit-background-clip: text; background-clip: text; color: transparent; padding-bottom: .04em; }
@@ -238,7 +239,8 @@ small { font-size: .62em; }
 .buyer h3 { color: #fff; }
 .buyer__sub { font-size: 20px; font-weight: 800; text-transform: uppercase; }
 .buyer__prize { margin-top: 8px; font-size: 18px; font-weight: 600; }
-.buyer__prize span { white-space: nowrap; }
+.buyer__prize span { white-space: normal; }
+.duration > *, .buyer > * { min-width: 0; }
 .buyer__prize b { color: var(--buyer-hl); font-weight: 900; font-size: 1.3em; }
 .buyer__rule { display: inline-block; margin-top: 10px; padding: 6px 16px; border-radius: 999px; background: rgb(255 255 255 / .2); font-weight: 600; }
 .buyer__total { margin-top: 10px; font-size: 22px; font-weight: 800; }
@@ -326,7 +328,7 @@ small { font-size: .62em; }
 @media (max-width: 1024px) {
   .top__mall { display: none; }
   .top__zalo { margin-left: auto; }
-  .hero__grid { grid-template-columns: 1fr; }
+  .hero__grid { grid-template-columns: minmax(0, 1fr); }
   .prizes--split { grid-template-columns: 1fr; }
   .acts { grid-template-columns: 1fr 1fr; }
   .perk-list, .prods { grid-template-columns: 1fr 1fr; }
@@ -334,6 +336,9 @@ small { font-size: .62em; }
 }
 @media (max-width: 640px) {
   html { scroll-padding-top: 80px; }
+  .btn--lg { font-size: 15px; }
+  .hero__brand { font-size: clamp(44px, 15vw, 60px); }
+  .hero__battle { font-size: clamp(30px, 10.5vw, 44px); }
   .top { padding-top: 8px; }
   .top__bar { gap: 12px; padding: 6px 6px 6px 16px; min-height: 58px; }
   .top__logo img { height: 34px; }
@@ -352,7 +357,8 @@ small { font-size: .62em; }
   .rank { justify-content: flex-start; }
   .duration, .buyer { flex-direction: column; align-items: flex-start; padding: 24px 20px; }
   .duration__img { align-self: center; height: 140px; }
-  .buyer__img { align-self: center; }
+  .buyer__img { align-self: center; max-width: 100%; }
+  .buyer__text { width: 100%; }
   .buyer__img img { max-height: 170px; }
   .acts, .perk-list, .info-grid { grid-template-columns: 1fr; }
   .prods { grid-template-columns: 1fr 1fr; gap: 10px; }
