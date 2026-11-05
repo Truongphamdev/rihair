@@ -120,6 +120,67 @@ small { font-size: .62em; }
 .total i { font-size: 24px; color: #d79a1d; }
 .total b { font-size: 30px; font-weight: 900; }
 
+/* ===== Sáng tạo thêm ===== */
+.progress { position: fixed; left: 0; top: 0; z-index: 40; height: 3px; width: 100%; background: var(--btn-grad); transform-origin: left; transform: scaleX(0); }
+@supports (animation-timeline: scroll()) { .progress { animation: grow linear both; animation-timeline: scroll(root); } }
+@keyframes grow { to { transform: scaleX(1); } }
+
+.live-tag { display: inline-flex; align-items: center; gap: 8px; margin-top: 10px; font-size: 13px; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: .06em; }
+.live-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--primary); box-shadow: 0 0 0 0 var(--primary); animation: pulse 1.8s ease-out infinite; }
+@keyframes pulse { 70% { box-shadow: 0 0 0 10px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
+
+.particles { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+.particle { position: absolute; left: var(--x); bottom: -40px; width: 22px; height: 22px; opacity: 0; background: var(--particle); border-radius: var(--particle-radius); transform: scale(var(--s)); animation: drift var(--d) linear var(--delay) infinite; }
+@keyframes drift { 0% { transform: translate(0, 0) rotate(0) scale(var(--s)); opacity: 0; } 10% { opacity: var(--o); } 90% { opacity: var(--o); } 100% { transform: translate(60px, -110vh) rotate(300deg) scale(var(--s)); opacity: 0; } }
+.hero__grid { position: relative; z-index: 1; }
+
+.band { overflow: hidden; background: var(--band-bg); color: #fff; }
+.band__track { display: flex; width: max-content; }
+.band ul { display: flex; flex: none; gap: 28px; padding: 14px 14px; font-weight: 800; font-size: 15px; text-transform: uppercase; letter-spacing: .06em; white-space: nowrap; }
+.band li[aria-hidden] { opacity: .6; }
+@keyframes band { to { transform: translateX(-50%); } }
+
+.hero__img { transition: transform 1.2s var(--ease-out); }
+.hero[data-pointer-parallax] .hero__img { translate: calc(var(--mx, 0) * -10px) calc(var(--my, 0) * -8px); }
+
+.hero__brand { position: relative; }
+.hero__brand::after { content: ""; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 30%, rgb(255 255 255 / .55) 50%, transparent 70%); background-size: 250% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; mix-blend-mode: screen; animation: sheen 5s ease-in-out 1.5s infinite; pointer-events: none; }
+@keyframes sheen { 0%, 60% { background-position: 120% 0; } 100% { background-position: -120% 0; } }
+
+[data-tilt] { transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform .6s var(--ease-out), box-shadow .6s var(--ease-out); transform-style: preserve-3d; }
+[data-tilt]::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; background: radial-gradient(260px circle at var(--gx, 50%) var(--gy, 50%), rgb(255 255 255 / .35), transparent 60%); opacity: 0; transition: opacity .4s; }
+[data-tilt]:hover::after { opacity: 1; }
+.prod { position: relative; }
+
+.top1 { isolation: isolate; }
+.top1::before { content: ""; position: absolute; inset: 0; z-index: 2; border-radius: inherit; padding: 3px; background: conic-gradient(from var(--ang, 0deg), #f6d365, #fda085, #f6d365, #ffe9a3, #f6d365); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; animation: spin-border 6s linear infinite; }
+@property --ang { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+@keyframes spin-border { to { --ang: 360deg; } }
+.top1 > * { position: relative; }
+.top1::after { z-index: 1; }
+
+.countdown span.tick { animation: tick .5s var(--ease-out); }
+@keyframes tick { 0% { transform: translateY(-40%); opacity: 0; } 100% { transform: none; opacity: 1; } }
+
+.board { position: relative; overflow: hidden; }
+.watermark { position: absolute; left: 50%; top: 40px; translate: -50% 0; font-size: clamp(120px, 22vw, 320px); font-weight: 900; letter-spacing: -0.04em; color: var(--watermark); pointer-events: none; line-height: 1; user-select: none; }
+.board .wrap { position: relative; }
+
+.milestones { position: relative; }
+.milestones b { position: relative; display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 2px var(--accent2); transform: scale(.6); opacity: 0; transition: transform .6s var(--ease-out), opacity .6s; }
+.milestones.is-in b { transform: none; opacity: 1; }
+.milestones.is-in b:nth-of-type(2) { transition-delay: .25s; }
+.milestones.is-in b:nth-of-type(3) { transition-delay: .5s; }
+.milestones i { opacity: 0; transition: opacity .4s .3s; }
+.milestones.is-in i { opacity: 1; }
+
+.confetti { position: fixed; inset: 0; z-index: 60; width: 100%; height: 100%; pointer-events: none; }
+.sticky-cta__clock { font-size: 12px; font-weight: 700; opacity: .9; padding-right: 10px; border-right: 1px solid rgb(255 255 255 / .4); }
+
+@media (prefers-reduced-motion: no-preference) { .band__track { animation: band 28s linear infinite; } .band:hover .band__track { animation-play-state: paused; } }
+@media (prefers-reduced-motion: reduce) { .live-dot, .hero__brand::after, .top1::before, .progress { animation: none; } .band ul[aria-hidden] { display: none; } .band__track { width: auto; } .band ul { flex-wrap: wrap; white-space: normal; } }
+@media (max-width: 640px) { .watermark { top: 20px; } .sticky-cta { justify-content: space-between; padding: 0 16px; } }
+
 /* Products */
 .products { padding-block: 48px 24px; }
 .sec-sub { text-align: center; margin-top: 8px; color: var(--muted); font-size: 17px; }
@@ -329,6 +390,11 @@ small { font-size: .62em; }
   --buyer-bg: linear-gradient(110deg, #1b4fa8, #0f2f6b); --buyer-hl: #ffd34d;
   --blob-1: rgb(255 255 255 / .9); --blob-2: rgb(160 195 240 / .6);
   --prod-bg: linear-gradient(160deg, #f7fafe, #e3ecf8);
+  --particle: radial-gradient(circle at 35% 30%, #fff 0%, rgb(190 215 245 / .9) 45%, rgb(120 160 220 / .4) 100%);
+  --particle-radius: 50%;
+  --band-bg: linear-gradient(95deg, #1e4fa3, #c4161c);
+  --watermark: rgb(30 79 163 / .06);
+  --confetti: #c4161c, #1e4fa3, #ffd34d, #ffffff, #2b6fd6;
   --radius: 18px; --btn-radius: 10px; --bar-radius: 16px;
 }
 .theme-rihair .pill { background: var(--pill-bg); }
