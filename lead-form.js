@@ -29,11 +29,16 @@
     return String(raw || "").replace(/[\s.\-()]/g, "");
   }
 
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  const TIKTOK_RE = /^(@[\w.]{2,}|https?:\/\/(www\.|vm\.|vt\.)?tiktok\.com\/\S+)$/i;
+
   function validate(data) {
     const errors = {};
     if (data.ho_ten.trim().length < 2) errors.ho_ten = "Vui lòng nhập họ và tên.";
     if (!PHONE_RE.test(normalizePhone(data.so_dien_thoai))) errors.so_dien_thoai = "Số điện thoại chưa đúng, ví dụ 0912 345 678.";
-    if (!data.tinh_thanh) errors.tinh_thanh = "Vui lòng chọn tỉnh/thành.";
+    if (!EMAIL_RE.test(data.email.trim())) errors.email = "Email chưa đúng định dạng.";
+    if (!TIKTOK_RE.test(data.tiktok.trim())) errors.tiktok = "Nhập link TikTok hoặc @username, ví dụ @alfe.vn.";
+    if (data.dia_chi.trim().length < 10) errors.dia_chi = "Vui lòng nhập địa chỉ đầy đủ để nhận sample.";
     if (data.dong_y !== "yes") errors.dong_y = "Bạn cần đồng ý để chúng tôi liên hệ.";
     return errors;
   }
@@ -89,10 +94,10 @@
       const data = {
         ho_ten: String(fd.get("ho_ten") || ""),
         so_dien_thoai: String(fd.get("so_dien_thoai") || ""),
-        tinh_thanh: String(fd.get("tinh_thanh") || ""),
-        san_pham: String(fd.get("san_pham") || ""),
+        email: String(fd.get("email") || ""),
+        tiktok: String(fd.get("tiktok") || ""),
+        dia_chi: String(fd.get("dia_chi") || ""),
         dong_y: fd.get("dong_y") ? "yes" : "",
-        tinh_trang: String(fd.get("tinh_trang") || ""),
       };
       const errors = validate(data);
       showErrors(form, errors);
