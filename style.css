@@ -227,8 +227,9 @@ small { font-size: .62em; }
 .kv { margin: 20px 0 0; position: relative; height: clamp(220px, 40vw, 520px); border-radius: var(--radius); overflow: hidden; box-shadow: 0 30px 60px -36px var(--shadow-c); }
 .kv img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .kv--note { display: grid; place-items: center; align-content: center; gap: 10px; height: clamp(200px, 30vw, 360px); background: repeating-linear-gradient(135deg, rgb(255 255 255 / .7) 0 14px, rgb(255 255 255 / .45) 14px 28px); border: 2px dashed var(--accent2); box-shadow: none; color: var(--accent2); text-align: center; padding: 24px; }
-.kv--note i { font-size: 48px; }
-.kv--note p { font-size: 18px; font-weight: 700; max-width: 30ch; }
+.kv--note i { font-size: 64px; }
+.kv--note p { font-size: clamp(22px, 2.6vw, 34px); font-weight: 800; line-height: 1.3; max-width: 36ch; }
+@media (max-width: 640px) { .kv--note { height: auto; min-height: 220px; } .kv--note p { font-size: 20px; } }
 
 /* Product thumbs rải khắp trang */
 .band li img { height: 34px; width: auto; filter: drop-shadow(0 4px 6px rgb(0 0 0 / .25)); }
