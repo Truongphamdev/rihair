@@ -430,54 +430,85 @@ small { font-size: .62em; }
   .foot { padding-bottom: 96px; }
 }
 
-/* ===== RiHair: xanh navy, đỏ brand, nền bạc xanh, theo ảnh demo khách ===== */
+/* Quà chưa có ảnh: icon lớn. Hạng thưởng là hiện vật: chữ thay cho số tiền. */
+.prize-ico { flex: none; display: grid; place-items: center; width: 150px; height: 150px; border-radius: 50%; background: var(--ico-bg); color: var(--primary); font-size: 84px; }
+.top1__ico { justify-self: center; width: 190px; height: 190px; font-size: 108px; }
+.buyer__ico { background: rgb(255 255 255 / .22); color: inherit; }
+.ranks--4 { grid-template-columns: repeat(2, 1fr); }
+.ranks--4 .rank { justify-content: flex-start; padding-right: 84px; }
+.rank__value--text { font-size: 24px; line-height: 1.2; }
+.duration__note { margin-top: 6px; font-size: 17px; color: var(--title); }
+.buyer__extra { margin-top: 14px; padding-top: 14px; border-top: 1px solid rgb(255 255 255 / .35); font-size: 17px; font-weight: 600; }
+.buyer__extra b { display: block; font-size: 1.15em; font-weight: 900; }
+.buyer__extra small { display: block; margin-top: 2px; font-size: 14px; font-weight: 500; }
+.board__note { text-align: center; }
+@media (max-width: 640px) {
+  .ranks--4 { grid-template-columns: 1fr; }
+  .prize-ico { width: 110px; height: 110px; font-size: 60px; align-self: center; }
+  .top1__ico { width: 130px; height: 130px; font-size: 72px; }
+}
+
+/* ===== RiHair: tone đen + đỏ theo poster "Mega Live RiHair" khách gửi 13/11 (bản sáng cũ: theme-rihair-light.css.bak) ===== */
 .theme-rihair {
-  --page-bg: linear-gradient(170deg, #f4f8fd 0%, #e3edf9 40%, #d6e4f4 100%);
-  --primary: #c4161c; --accent2: #1e4fa3;
-  --btn-grad: linear-gradient(95deg, #e02027, #b30f15);
-  --pill-bg: linear-gradient(95deg, #2b6fd6, #1e4fa3);
-  --brand-grad: linear-gradient(100deg, #15327a 0%, #1e4fa3 60%, #2b6fd6 100%);
-  --battle-grad: linear-gradient(100deg, #1e4fa3 0%, #2b6fd6 100%);
-  --tagline: #1b2a4a; --title: #1b2a4a; --muted: #5b6b85; --text: #1b2a4a;
-  --h2: #1e4fa3; --form-title: #1e4fa3; --value: #c4161c; --value-strong: #c4161c; --prize-ink: #c4161c;
-  --rank-label: #1e4fa3; --act-title: #1e4fa3; --step-num: #fff; --note: #5b6b85;
-  --gold-grad: linear-gradient(95deg, #c4161c, #e02027);
-  --badge-grad: linear-gradient(95deg, #ffe08a, #f2b530); --badge-ink: #7a2a00;
-  --card: rgb(255 255 255 / .78); --card-strong: rgb(255 255 255 / .88); --card-line: rgb(255 255 255 / .95);
-  --ico-bg: #e4eefb; --input-line: #cfdcee; --focus-ring: rgb(30 79 163 / .18);
-  --shadow-c: rgb(30 60 120 / .5);
-  --buyer-bg: linear-gradient(110deg, #1b4fa8, #0f2f6b); --buyer-hl: #ffd34d;
-  --blob-1: rgb(255 255 255 / .9); --blob-2: rgb(160 195 240 / .6);
-  --prod-bg: linear-gradient(160deg, #f7fafe, #e3ecf8);
-  --particle: radial-gradient(circle at 35% 30%, #fff 0%, rgb(190 215 245 / .9) 45%, rgb(120 160 220 / .4) 100%);
+  --page-bg: radial-gradient(900px 600px at 6% -5%, rgb(255 30 40 / .26), transparent 60%), radial-gradient(900px 700px at 100% 40%, rgb(255 30 40 / .14), transparent 60%), #0a0506;
+  --primary: #ff3b44; --accent2: #ff6b72;
+  --btn-grad: linear-gradient(95deg, #ff2a33, #c4161c);
+  --pill-bg: linear-gradient(95deg, #45484f, #1b1c20);
+  --brand-grad: linear-gradient(100deg, #ffffff 0%, #ffd9db 50%, #ff5a61 100%);
+  --battle-grad: linear-gradient(100deg, #ff5a61 0%, #e02027 100%);
+  --tagline: #ffffff; --title: #f6eded; --muted: #b9aaac; --text: #f6eded;
+  --h2: #ff3b44; --form-title: #c4161c; --value: #ff4d55; --value-strong: #ff4d55; --prize-ink: #ffffff;
+  --rank-label: #ffffff; --act-title: #ff6b72; --step-num: #fff; --note: #c9b8ba;
+  --gold-grad: linear-gradient(95deg, #ff6b72, #ff2a33);
+  --badge-grad: linear-gradient(95deg, #ffffff, #d9dde3); --badge-ink: #c4161c;
+  --card: rgb(255 255 255 / .05); --card-strong: rgb(255 255 255 / .07); --card-line: rgb(255 70 80 / .32);
+  --ico-bg: rgb(255 42 51 / .16); --input-line: #e6cfd1; --focus-ring: rgb(196 22 28 / .18);
+  --shadow-c: rgb(255 30 40 / .4);
+  --buyer-bg: linear-gradient(110deg, #e02027, #8f0c11); --buyer-hl: #ffffff;
+  --blob-1: rgb(255 30 40 / .3); --blob-2: rgb(255 30 40 / .16);
+  --prod-bg: linear-gradient(160deg, #2a0d0f, #120708);
+  --particle: radial-gradient(circle at 35% 30%, #fff 0%, rgb(255 90 97 / .9) 45%, rgb(196 22 28 / .4) 100%);
   --particle-radius: 50%;
-  --band-bg: linear-gradient(95deg, #1e4fa3, #c4161c);
-  --watermark: rgb(30 79 163 / .06);
-  --confetti: #c4161c, #1e4fa3, #ffd34d, #ffffff, #2b6fd6;
-  --kit-bg: linear-gradient(135deg, rgb(255 255 255 / .9), rgb(223 234 248 / .95));
+  --band-bg: linear-gradient(95deg, #e02027, #8f0c11);
+  --watermark: rgb(255 42 51 / .07);
+  --confetti: #ff2a33, #ffffff, #c4161c, #d9dde3, #ff6b72;
+  --kit-bg: linear-gradient(135deg, rgb(255 255 255 / .06), rgb(255 42 51 / .14));
   --radius: 18px; --btn-radius: 10px; --bar-radius: 16px;
 }
-.theme-rihair .pill { background: var(--pill-bg); }
+/* Khối nền sáng (thanh menu, form) giữ chữ tối */
+.theme-rihair .top__bar, .theme-rihair .form { --title: #1b1214; --muted: #6b5c5e; --primary: #c4161c; --card-line: #f0d9da; }
+.theme-rihair .top__bar { background: rgb(255 255 255 / .95); box-shadow: 0 0 0 1px rgb(255 70 80 / .5), 0 16px 40px -24px var(--shadow-c); }
+.theme-rihair .bezel { background: rgb(255 42 51 / .22); box-shadow: 0 0 0 1px rgb(255 70 80 / .5), 0 40px 80px -40px var(--shadow-c); }
+.theme-rihair .form { background: #fff; }
+.theme-rihair .pill { box-shadow: inset 0 0 0 1px rgb(255 255 255 / .45), 0 10px 24px -12px var(--shadow-c); }
+.theme-rihair .total i { color: #c4161c; }
+.theme-rihair .top1 h3 i, .theme-rihair .duration h3 i { color: #e9edf2; }
+.theme-rihair .top1::before { background: conic-gradient(from var(--ang, 0deg), #ff2a33, #ffffff, #ff2a33, #d9dde3, #ff2a33); }
+.theme-rihair .top1__img img, .theme-rihair .duration__img { mix-blend-mode: normal; border-radius: 14px; }
+.theme-rihair .buyer__prize { font-size: clamp(22px, 2.4vw, 30px); font-weight: 900; line-height: 1.15; }
+.theme-rihair .buyer__prize span { font-size: .7em; font-weight: 600; }
+.theme-rihair .milestones b { background: #1c0a0b; }
+.theme-rihair .step__ico { background: rgb(255 42 51 / .16); }
+.theme-rihair .perk__ico--img { background: #2a0d0f; }
+.theme-rihair .kv--note { background: repeating-linear-gradient(135deg, rgb(255 255 255 / .06) 0 14px, rgb(255 255 255 / .02) 14px 28px); }
+.theme-rihair .foot { background: #060303; }
 .theme-rihair .hero__product { margin-top: 20px; height: 300px; display: flex; align-items: flex-end; justify-content: center; gap: 10px; order: 10; }
-.theme-rihair .hero__product::before { content: ""; position: absolute; left: 50%; bottom: -14px; translate: -50% 0; width: 92%; height: 70px; border-radius: 50%; background: radial-gradient(ellipse at center, #ffffff 0%, #c9d8ea 55%, transparent 72%); }
-.theme-rihair .hero__img { position: relative; height: 270px; width: auto; filter: drop-shadow(0 24px 24px rgb(30 60 120 / .3)); }
+.theme-rihair .hero__product::before { content: ""; position: absolute; left: 50%; bottom: -14px; translate: -50% 0; width: 92%; height: 70px; border-radius: 50%; background: radial-gradient(ellipse at center, rgb(255 70 80 / .6) 0%, rgb(196 22 28 / .28) 55%, transparent 72%); }
+.theme-rihair .hero__img { position: relative; height: 270px; width: auto; filter: drop-shadow(0 24px 24px rgb(255 30 40 / .35)); }
 .theme-rihair .hero__img--0 { height: 240px; }
 .theme-rihair .hero__img--3 { height: 240px; }
 .theme-rihair .hero__copy { display: flex; flex-direction: column; }
 .theme-rihair .hl-list { order: 5; }
-.theme-rihair .top1 h3 { color: #1e4fa3; }
-.theme-rihair .top1__prize { color: #c4161c; }
-.theme-rihair .rank__num { display: none; place-items: center; position: absolute; left: 22px; top: 18px; width: 22px; height: 22px; border-radius: 50%; background: #1e4fa3; color: #fff; font-size: 12px; font-weight: 900; }
-.theme-rihair .rank__value { color: #c4161c; }
+.theme-rihair .rank__num { display: none; place-items: center; position: absolute; left: 22px; top: 18px; width: 22px; height: 22px; border-radius: 50%; background: #c4161c; color: #fff; font-size: 12px; font-weight: 900; }
 .theme-rihair .countdown { max-width: none; margin-top: 16px; }
 .theme-rihair .countdown__units { display: flex; justify-content: center; gap: 8px; }
 .theme-rihair .countdown__units div { display: flex; align-items: baseline; gap: 4px; }
 .theme-rihair .countdown__units div + div { border-left: 0; }
 .theme-rihair .countdown__units div + div::before { content: "·"; margin-right: 8px; color: var(--muted); }
 .theme-rihair .countdown small { font-size: 16px; font-weight: 700; color: var(--title); }
-.theme-rihair .step__num { background: #1e4fa3; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; font-size: 15px; }
-.theme-rihair .act__ico, .theme-rihair .perk__ico, .theme-rihair .rank__ico { color: #1e4fa3; }
-.theme-rihair .foot__row img { height: 44px; }
+.theme-rihair .step__num { background: #c4161c; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; font-size: 15px; }
+.theme-rihair .act__ico, .theme-rihair .perk__ico, .theme-rihair .rank__ico { color: #ff4d55; }
+.theme-rihair .foot__row img { height: 56px; padding: 6px 14px; background: #fff; border-radius: 12px; }
 @media (max-width: 640px) { .theme-rihair .hero__product { height: 220px; } .theme-rihair .hero__img { height: 190px; } .theme-rihair .hero__img--0, .theme-rihair .hero__img--3 { height: 170px; } }
 .theme-rihair .prizes--split { grid-template-columns: 1fr 1.3fr; }
 .theme-rihair .duration { padding: 24px 28px; }
@@ -485,3 +516,4 @@ small { font-size: .62em; }
 .theme-rihair .duration__prize { font-size: 22px; }
 .theme-rihair .duration__value { font-size: 30px; }
 .theme-rihair .duration__img { height: 150px; }
+@media (max-width: 1024px) { .theme-rihair .prizes--split { grid-template-columns: 1fr; } }
