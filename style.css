@@ -528,6 +528,41 @@ small { font-size: .62em; }
 .theme-rihair .duration__img[src$=".webp"] { height: 150px; }
 @media (max-width: 640px) { .duration__img[src$=".webp"] { width: 130px; height: 130px; } }
 
+/* ===== Dải quà tặng nổi bật (theo poster Black Friday khách gửi) ===== */
+.gifts { position: relative; margin-top: 20px; padding: 34px 28px 30px; border-radius: var(--radius); background: var(--gifts-bg); box-shadow: 0 0 0 1px var(--card-line), 0 30px 60px -36px var(--shadow-c); overflow: hidden; }
+.gifts::before { content: ""; position: absolute; inset: -30% -10% auto; height: 120%; background: conic-gradient(from 200deg at 50% 60%, transparent 0 40%, var(--gift-glow) 47%, transparent 54% 100%); opacity: .35; filter: blur(30px); pointer-events: none; }
+.gifts > * { position: relative; }
+.gifts__title { display: flex; align-items: center; justify-content: center; gap: 18px; font-size: clamp(18px, 2.4vw, 30px); font-weight: 900; letter-spacing: .04em; text-transform: uppercase; text-align: center; color: var(--gifts-title); }
+.gifts__title::before, .gifts__title::after { content: ""; flex: 1; max-width: 110px; height: 2px; background: currentColor; opacity: .55; }
+.gifts__row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; align-items: end; margin-top: 8px; }
+.gifts__row--3 { grid-template-columns: 1fr 1.25fr 1fr; }
+.gifts__row--4 { grid-template-columns: repeat(4, 1fr); }
+.gift { display: grid; justify-items: center; }
+.gift__img { position: relative; z-index: 1; display: flex; align-items: flex-end; justify-content: center; width: 100%; height: 230px; margin-bottom: -30px; }
+.gift__img img { height: 100%; width: auto; max-width: 100%; object-fit: contain; object-position: bottom; filter: drop-shadow(0 0 22px var(--gift-glow)) drop-shadow(0 18px 18px rgb(0 0 0 / .45)); transition: transform .7s var(--ease-out); }
+.gift__img img[src*="gift-halio"], .gift__img img[src*="gift-panasonic"] { filter: none; }
+.gift:hover .gift__img img { transform: translateY(-8px) scale(1.04); }
+.gift--main .gift__img { height: 300px; }
+.gift__label { width: 100%; padding: 42px 14px 16px; border-radius: 22px; background: var(--gift-card); text-align: center; box-shadow: 0 0 0 2px rgb(255 255 255 / .75), 0 0 34px var(--gift-glow); }
+.gift__label h3 { font-size: clamp(15px, 1.5vw, 20px); font-weight: 900; line-height: 1.15; text-transform: uppercase; color: var(--gift-ink); }
+.gift--main .gift__label h3 { font-size: clamp(19px, 2.1vw, 28px); color: var(--gift-accent); }
+.gift__tag { display: inline-block; margin-top: 10px; padding: 6px 14px; border-radius: 999px; background: var(--btn-grad); color: #fff; font-size: 13px; font-weight: 800; text-transform: uppercase; line-height: 1.25; }
+.buyer__img img[src*="gift-"] { height: 150px; width: auto; border-radius: 0; background: none; mix-blend-mode: normal; }
+.duration__img[src*="gift-"] { flex: none; width: auto; height: 170px; background: none; border-radius: 0; mix-blend-mode: normal; }
+.top1__img img[src*="gift-"] { width: auto; height: 250px; margin-inline: auto; mix-blend-mode: normal; filter: drop-shadow(0 22px 26px var(--shadow-c)); }
+.hl-card__ico--img[src*="gift-"] { border-radius: 0; background: none; }
+@media (max-width: 640px) {
+  .gifts { padding: 26px 16px 20px; }
+  .gifts__row, .gifts__row--3, .gifts__row--4 { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .gifts__row--3 .gift--main { grid-column: 1 / -1; order: -1; }
+  .gift__img { height: 170px; }
+  .gift--main .gift__img { height: 230px; }
+  .gift__label { padding: 38px 10px 14px; }
+  .gift__tag { font-size: 11px; padding: 5px 10px; }
+  .top1__img img[src*="gift-"] { height: 200px; }
+  .buyer__img img[src*="gift-"] { height: 120px; }
+}
+
 /* ===== RiHair: tone đen + đỏ theo poster "Mega Live RiHair" khách gửi 13/11 (bản sáng cũ: theme-rihair-light.css.bak) ===== */
 .theme-rihair {
   --page-bg: radial-gradient(900px 600px at 6% -5%, rgb(255 30 40 / .26), transparent 60%), radial-gradient(900px 700px at 100% 40%, rgb(255 30 40 / .14), transparent 60%), #0a0506;
@@ -600,3 +635,4 @@ small { font-size: .62em; }
 @media (max-width: 1024px) { .theme-rihair .prizes--split { grid-template-columns: 1fr; } }
 .theme-rihair .hero--cards .hero__battle { font-size: clamp(32px, 3.9vw, 50px); }
 @media (max-width: 1024px) { .theme-rihair .hero--cards .hero__product { width: 264px; } }
+.theme-rihair { --gifts-bg: radial-gradient(120% 90% at 50% 0%, #6a1014 0%, #2c0a0c 55%, #120506 100%); --gifts-title: #ffffff; --gift-card: linear-gradient(180deg, #ffffff 0%, #e2e5eb 100%); --gift-ink: #1b1214; --gift-accent: #c4161c; --gift-glow: rgb(255 42 51 / .6); }
