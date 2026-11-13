@@ -509,6 +509,25 @@ small { font-size: .62em; }
   .hero--cards .countdown { width: 100%; }
 }
 
+/* Ảnh quà: ảnh sản phẩm thật. iPhone và E-Voucher nền trong suốt, các ảnh còn lại nền trắng nên đặt trong ô trắng bo góc. */
+.nb { white-space: nowrap; }
+.top1__img img[src*="prize-"], .duration__img[src*="prize-"], .buyer__img img[src*="prize-"] { mix-blend-mode: normal; }
+.rank__ico--img, .act__ico .ico--img, .hl-card__ico--img { object-fit: contain; }
+.rank__ico--img[src$=".svg"] { padding: 6px; }
+.rank__ico--img[src$=".webp"] { background: #fff; padding: 3px; }
+.act__ico .ico--img { width: 100%; height: 100%; padding: 8px; }
+.hl-card__ico--img[src$=".svg"], .hl-card__ico--img[src*="iphone"] { border-radius: 0; }
+.top1__img img[src*="iphone"] { width: auto; height: 250px; margin-inline: auto; filter: drop-shadow(0 22px 26px var(--shadow-c)); }
+.duration__img[src$=".svg"] { height: 170px; border-radius: 0; }
+.duration__img[src$=".webp"] { border-radius: 16px; }
+.buyer__img { align-items: center; gap: 12px; }
+.buyer__img img[src*="prize-"] { height: 130px; width: auto; border-radius: 16px; filter: none; }
+.buyer__img img[src*="iphone"] { height: 170px; border-radius: 0; filter: drop-shadow(0 16px 20px rgb(0 0 0 / .35)); }
+@media (max-width: 640px) { .top1__img img[src*="iphone"] { height: 200px; } .buyer__img img[src*="iphone"] { height: 150px; } .buyer__img img[src*="prize-"]:not([src*="iphone"]) { height: 110px; } }
+.duration__img[src$=".webp"] { flex: none; width: 150px; height: 150px; object-fit: contain; background: #fff; }
+.theme-rihair .duration__img[src$=".webp"] { height: 150px; }
+@media (max-width: 640px) { .duration__img[src$=".webp"] { width: 130px; height: 130px; } }
+
 /* ===== RiHair: tone đen + đỏ theo poster "Mega Live RiHair" khách gửi 13/11 (bản sáng cũ: theme-rihair-light.css.bak) ===== */
 .theme-rihair {
   --page-bg: radial-gradient(900px 600px at 6% -5%, rgb(255 30 40 / .26), transparent 60%), radial-gradient(900px 700px at 100% 40%, rgb(255 30 40 / .14), transparent 60%), #0a0506;

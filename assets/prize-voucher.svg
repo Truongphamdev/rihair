@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" role="img" aria-label="E-Voucher">
+  <defs>
+    <linearGradient id="t" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff3c4"/><stop offset=".5" stop-color="#ffd166"/><stop offset="1" stop-color="#f39c12"/></linearGradient>
+    <linearGradient id="t2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#ffe6ef"/></linearGradient>
+  </defs>
+  <ellipse cx="110" cy="190" rx="78" ry="8" fill="#000" opacity=".28"/>
+  <g transform="rotate(-10 110 110)">
+    <path d="M26 62h168a8 8 0 0 1 8 8v24a16 16 0 0 0 0 32v24a8 8 0 0 1-8 8H26a8 8 0 0 1-8-8v-24a16 16 0 0 0 0-32V70a8 8 0 0 1 8-8z" fill="url(#t)" stroke="#fff" stroke-opacity=".8" stroke-width="2"/>
+    <path d="M150 66v88" stroke="#b86b00" stroke-width="2.5" stroke-dasharray="6 6" opacity=".7"/>
+    <text x="88" y="104" text-anchor="middle" font-family="'Be Vietnam Pro',Arial,sans-serif" font-weight="900" font-size="20" fill="#7a3d00" letter-spacing=".5">E-VOUCHER</text>
+    <rect x="42" y="116" width="92" height="22" rx="11" fill="url(#t2)"/>
+    <text x="88" y="132" text-anchor="middle" font-family="'Be Vietnam Pro',Arial,sans-serif" font-weight="800" font-size="12" fill="#b3261e">QUÀ TẶNG</text>
+    <g transform="translate(176 110)" fill="none" stroke="#7a3d00" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="-11" y="-4" width="22" height="17" rx="2"/><path d="M-14-4h28v-7h-28zM0-11v24M0-11c-4-9-13-6-9-1 2 2 6 1 9 1zm0 0c4-9 13-6 9-1-2 2-6 1-9 1z"/>
+    </g>
+  </g>
+  <g fill="#fff"><path d="M40 40l3 8 8 3-8 3-3 8-3-8-8-3 8-3z" opacity=".9"/><path d="M184 164l2 6 6 2-6 2-2 6-2-6-6-2 6-2z" opacity=".8"/></g>
+</svg>
