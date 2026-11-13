@@ -30,33 +30,41 @@
     <div class="wrap top__bar">
       <a href="#top" class="top__logo"><img src="assets/logo-rihair.webp" alt="RiHair" width="700" height="309"></a>
       <p class="top__mall"><i class="ph-fill ph-tiktok-logo" aria-hidden="true"></i>Official TikTok Mall</p>
-      <p class="top__zalo"><span class="zalo-badge" aria-hidden="true">Zalo</span><span><small>Zalo hỗ trợ 24/7:</small><b data-ph>09xx.xxx.xxx</b></span></p>
       <a href="#san-pham" class="top__link">Sản phẩm</a>
       <a href="#dang-ky" class="btn btn--primary btn--sm" data-magnetic>Đăng ký ngay<i class="ph ph-arrow-right" aria-hidden="true"></i></a>
     </div>
   </header>
   <div class="progress" aria-hidden="true"></div>
   <main>
-    <section class="hero hero--list" id="top" data-particles data-pointer-parallax>
+    <section class="hero hero--cards" id="top" data-particles data-pointer-parallax>
       <div class="wrap hero__grid">
         <div class="hero__copy">
           <p class="pill">TikTok Shop Livestream Battle · 27 - 29/11</p>
           <h1 class="hero__title"><span class="hero__brand">RIHAIR</span> <span class="hero__battle">Livestream Battle</span></h1>
           <p class="hero__tagline">GMV càng cao - Quà càng lớn</p>
           <p class="live-tag"><span class="live-dot" aria-hidden="true"></span>Đang mở cổng đăng ký</p>
-          <div class="hero__product" aria-hidden="true">
-            <img class="hero__img hero__img--0" src="assets/bubble-spray.webp" alt="" loading="eager">
-            <img class="hero__img hero__img--1" src="assets/scalp-shampoo.webp" alt="" loading="eager">
-            <img class="hero__img hero__img--2" src="assets/scalp-conditioner.webp" alt="" loading="eager">
-            <img class="hero__img hero__img--3" src="assets/strong-spray.webp" alt="" loading="eager">
+          <div class="hero__product">
+            <figure class="hero__fig hero__fig--0"><img class="hero__img" src="assets/scalp-shampoo.webp" alt="Dầu gội" loading="eager"></figure>
+            <figure class="hero__fig hero__fig--1"><img class="hero__img" src="assets/scalp-conditioner.webp" alt="Dầu xả" loading="eager"></figure>
+            <figure class="hero__fig hero__fig--2"><img class="hero__img" src="assets/strong-spray.webp" alt="Strong" loading="eager"></figure>
+            <figure class="hero__fig hero__fig--3"><img class="hero__img" src="assets/bubble-spray.webp" alt="Bubble" loading="eager"></figure>
+            <ul class="hero__names"><li>Dầu gội</li><li>Dầu xả</li><li>Strong</li><li>Bubble</li></ul>
           </div>
-          <ul class="hl-list" data-stagger data-ph>
-            <li><i class="ph-fill ph-check-circle" aria-hidden="true"></i><p>Top 1 GMV battle: <b>iPad Air M4 trị giá 30M</b></p></li>
-            <li><i class="ph-fill ph-check-circle" aria-hidden="true"></i><p>Phiên live dài nhất: <b>máy sấy tóc Dyson trị giá 11M</b></p></li>
-            <li><i class="ph-fill ph-check-circle" aria-hidden="true"></i><p>Nhiệm vụ theo ngày: <b>9 e-voucher 1M</b></p></li>
-            <li><i class="ph-fill ph-check-circle" aria-hidden="true"></i><p>Commission Boost: <b>cộng thêm +3% GMV</b></p></li>
+          <ul class="hl-cards" data-stagger data-ph>
+            <li class="hl-card"><img class="hl-card__ico hl-card__ico--img" src="assets/prize-ipad.webp" alt="" loading="lazy"><p><span>Top 1 GMV battle:</span> <b>iPad Air M4</b> <em>trị giá 30M</em></p></li>
+            <li class="hl-card"><img class="hl-card__ico hl-card__ico--img" src="assets/prize-dryer.webp" alt="" loading="lazy"><p><span>Phiên live dài nhất:</span> <b>máy sấy tóc Dyson</b> <em>trị giá 11M</em></p></li>
+            <li class="hl-card"><i class="ph-fill ph-ticket hl-card__ico" aria-hidden="true"></i><p><span>Nhiệm vụ theo ngày:</span> <b>9 e-voucher</b> <em>1M</em></p></li>
+            <li class="hl-card"><i class="ph-fill ph-chart-bar hl-card__ico" aria-hidden="true"></i><p><span>Commission Boost:</span> <b>cộng thêm</b> <em>+3% GMV</em></p></li>
           </ul>
-          
+          <div class="countdown" data-countdown data-target="2026-11-20T23:59:00+07:00" aria-label="Thời gian còn lại trước khi đóng đăng ký">
+            <p class="countdown__label">Cổng đăng ký đóng sau:</p>
+            <div class="countdown__units">
+              <div><span data-unit="days">00</span><small>ngày</small></div>
+              <div><span data-unit="hours">00</span><small>giờ</small></div>
+              <div><span data-unit="minutes">00</span><small>phút</small></div>
+            </div>
+            <p class="countdown__live">Cổng đăng ký đã đóng</p>
+          </div>
         </div>
         <div class="hero__side" id="dang-ky">
       <div class="bezel form-wrap" data-reveal>
@@ -68,36 +76,37 @@
           </div>
           <div class="form__fields">
             <div class="field">
-              <label for="ho_ten">Họ và tên</label>
+              <label for="ho_ten">Họ và tên <span class="req" aria-hidden="true">*</span></label>
               <div class="field__box"><i class="ph ph-user" aria-hidden="true"></i><input id="ho_ten" name="ho_ten" type="text" autocomplete="name" placeholder="Nhập họ và tên của bạn" required></div>
               <p class="field__error" data-error-for="ho_ten" aria-live="polite"></p>
             </div>
             <div class="field">
-              <label for="so_dien_thoai">SĐT/Zalo</label>
+              <label for="so_dien_thoai">SĐT/Zalo <span class="req" aria-hidden="true">*</span></label>
               <div class="field__box"><i class="ph ph-phone" aria-hidden="true"></i><input id="so_dien_thoai" name="so_dien_thoai" type="tel" autocomplete="tel" placeholder="Nhập số điện thoại hoặc Zalo" required inputmode="tel"></div>
               <p class="field__error" data-error-for="so_dien_thoai" aria-live="polite"></p>
             </div>
             <div class="field">
-              <label for="email">Email</label>
+              <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
               <div class="field__box"><i class="ph ph-envelope-simple" aria-hidden="true"></i><input id="email" name="email" type="email" autocomplete="email" placeholder="Nhập email của bạn" required></div>
               <p class="field__error" data-error-for="email" aria-live="polite"></p>
             </div>
             <div class="field">
-              <label for="tiktok">Link TikTok</label>
+              <label for="tiktok">Link TikTok <span class="req" aria-hidden="true">*</span></label>
               <div class="field__box"><i class="ph ph-tiktok-logo" aria-hidden="true"></i><input id="tiktok" name="tiktok" type="text" autocomplete="off" placeholder="Link TikTok hoặc @username" required></div>
               <p class="field__error" data-error-for="tiktok" aria-live="polite"></p>
             </div>
             <div class="field">
-              <label for="dia_chi">Địa chỉ nhận mẫu thử</label>
+              <label for="dia_chi">Địa chỉ nhận mẫu thử <span class="req" aria-hidden="true">*</span></label>
               <div class="field__box"><i class="ph ph-map-pin" aria-hidden="true"></i><input id="dia_chi" name="dia_chi" type="text" autocomplete="street-address" placeholder="Số nhà, đường, phường, tỉnh/thành" required></div>
               <p class="field__error" data-error-for="dia_chi" aria-live="polite"></p>
             </div>
             <div class="hp" aria-hidden="true"><label>Website <input name="website" tabindex="-1" autocomplete="off"></label></div>
             <label class="check">
-              <input type="checkbox" name="dong_y" value="yes">
-              <span>Tôi đồng ý cung cấp thông tin để RiHair liên hệ và gửi sample.</span>
+              <input type="checkbox" name="dong_y" value="yes" required>
+              <span>Tôi đồng ý cung cấp thông tin để RiHair liên hệ và gửi sample. <span class="req" aria-hidden="true">*</span></span>
             </label>
             <p class="field__error" data-error-for="dong_y" aria-live="polite"></p>
+            <p class="form__req"><span class="req" aria-hidden="true">*</span> Thông tin bắt buộc điền</p>
             <button type="submit" class="btn btn--primary btn--block btn--lg" data-magnetic>
               <span class="btn__label">Đăng ký ngay - Nhận sample</span>
               <span class="btn__spinner" aria-hidden="true"></span>
@@ -112,15 +121,7 @@
           </div>
         </form>
       </div>
-          <div class="countdown" data-countdown data-target="2026-11-20T23:59:00+07:00" aria-label="Thời gian còn lại trước khi đóng đăng ký">
-            <p class="countdown__label">Cổng đăng ký đóng sau:</p>
-            <div class="countdown__units">
-              <div><span data-unit="days">00</span><small>ngày</small></div>
-              <div><span data-unit="hours">00</span><small>giờ</small></div>
-              <div><span data-unit="minutes">00</span><small>phút</small></div>
-            </div>
-            <p class="countdown__live">Cổng đăng ký đã đóng</p>
-          </div>
+          
         </div>
       </div>
     </section>
@@ -133,22 +134,22 @@
           <h2>Sản phẩm trong chiến dịch</h2>
         </div>
         <p class="sec-sub" data-reveal>Sample gửi tận nhà cho creator, gắn giỏ hàng trên TikTok Shop</p>
-        <ul class="prods" data-stagger>
-          <li class="prod" data-ph data-tilt>
-            <figure class="prod__img"><img src="assets/strong-spray.webp" alt="RiHair Strong Spray" loading="lazy"></figure>
-            <div class="prod__text"><h3>RiHair Strong Spray</h3><p>Xịt ngăn ngừa rụng tóc và hỗ trợ mọc tóc. Tinh chất Cỏ đắng Senburi, Vitamin E, B5. Công nghệ tia xịt CO₂ dễ thẩm thấu, mát lạnh, không nhờn rít.</p></div>
-          </li>
-          <li class="prod" data-ph data-tilt>
-            <figure class="prod__img"><img src="assets/bubble-spray.webp" alt="RiHair Bubble Spray" loading="lazy"></figure>
-            <div class="prod__text"><h3>RiHair Bubble Spray</h3><p>Xịt ngăn ngừa rụng tóc và hỗ trợ mọc tóc với tinh chất Cỏ đắng Senburi, Vitamin E, B5. Không Paraben, không silicone, không hormone.</p></div>
-          </li>
+        <ul class="prods prods--4" data-stagger>
           <li class="prod" data-ph data-tilt>
             <figure class="prod__img"><img src="assets/scalp-shampoo.webp" alt="RiHair Scalp Shampoo" loading="lazy"></figure>
-            <div class="prod__text"><h3>RiHair Scalp Shampoo</h3><p>Làm sạch tóc và da đầu, hỗ trợ giảm gàu, làm dịu da đầu. Mát lạnh, sạch thoáng da đầu với Menthol.</p></div>
+            <div class="prod__text"><h3>RiHair Scalp Shampoo</h3><p>Dầu gội làm sạch tóc và da đầu, hỗ trợ giảm gàu, làm dịu da đầu.</p><ul class="prod__usps"><li><i class="ph-fill ph-check-circle" aria-hidden="true"></i>Hỗ trợ giảm gàu - làm dịu da đầu</li><li><i class="ph-fill ph-check-circle" aria-hidden="true"></i>Mát lạnh, sạch thoáng da đầu với Menthol</li><li><i class="ph-fill ph-check-circle" aria-hidden="true"></i>Piroctone Olamine, Rễ Cam Thảo, Tảo đỏ Nhật Bản</li><li><i class="ph-fill ph-check-circle" aria-hidden="true"></i>3 không: Paraben - Silicone - Sulfate truyền thống</li></ul></div>
           </li>
           <li class="prod" data-ph data-tilt>
             <figure class="prod__img"><img src="assets/scalp-conditioner.webp" alt="RiHair Scalp Conditioner" loading="lazy"></figure>
-            <div class="prod__text"><h3>RiHair Scalp Conditioner</h3><p>Phức hợp Cationic giúp tóc mềm mượt, dễ chải, giảm xơ rối. Glycerin cấp ẩm, hỗ trợ phục hồi tóc hư tổn.</p></div>
+            <div class="prod__text"><h3>RiHair Scalp Conditioner</h3><p>Dầu xả nuôi dưỡng tóc mềm mượt và chắc khỏe từ gốc.</p><ul class="prod__usps"><li><i class="ph-fill ph-check-circle" aria-hidden="true"></i>Tóc mềm mượt, dễ chải, giảm xơ rối</li><li><i class="ph-fill ph-check-circle" aria-hidden="true"></i>Phức hợp dưỡng tóc cao cấp Cationic</li><li><i class="ph-fill ph-check-circle" aria-hidden="true"></i>Glycerin cấp ẩm, hỗ trợ phục hồi tóc hư tổn</li><li><i class="ph-fill ph-check-circle" aria-hidden="true"></i>3 không: Paraben - Dầu khoáng - Sulfate truyền thống</li></ul></div>
+          </li>
+          <li class="prod" data-ph data-tilt>
+            <figure class="prod__img"><img src="assets/strong-spray.webp" alt="RiHair Strong Spray" loading="lazy"></figure>
+            <div class="prod__text"><h3>RiHair Strong Spray</h3><p>Xịt ngăn ngừa rụng tóc và hỗ trợ mọc tóc.</p><ul class="prod__usps"><li><i class="ph-fill ph-check-circle" aria-hidden="true"></i>Tinh chất Cỏ đắng Senburi</li><li><i class="ph-fill ph-check-circle" aria-hidden="true"></i>Vitamin E, B5</li><li><i class="ph-fill ph-check-circle" aria-hidden="true"></i>Công nghệ tia xịt CO₂: dễ thẩm thấu, mát lạnh, không nhờn rít</li><li><i class="ph-fill ph-check-circle" aria-hidden="true"></i>3 không: không Paraben, không silicone, không hormone</li></ul></div>
+          </li>
+          <li class="prod" data-ph data-tilt>
+            <figure class="prod__img"><img src="assets/bubble-spray.webp" alt="RiHair Bubble Spray" loading="lazy"></figure>
+            <div class="prod__text"><h3>RiHair Bubble Spray</h3><p>Xịt ngăn ngừa rụng tóc và hỗ trợ mọc tóc.</p><ul class="prod__usps"><li><i class="ph-fill ph-check-circle" aria-hidden="true"></i>Tinh chất Cỏ đắng Senburi</li><li><i class="ph-fill ph-check-circle" aria-hidden="true"></i>Vitamin E, B5</li><li><i class="ph-fill ph-check-circle" aria-hidden="true"></i>Công nghệ tia xịt CO₂: dễ thẩm thấu, mát lạnh, không nhờn rít</li><li><i class="ph-fill ph-check-circle" aria-hidden="true"></i>3 không: không Paraben, không silicone, không hormone</li></ul></div>
           </li>
         </ul>
       </div>
@@ -158,10 +159,10 @@
         <div class="kit__text" data-reveal>
           <h2>Bộ sample gửi tận nhà cho bạn</h2>
           <p class="kit__sub">Đăng ký là nhận trọn bộ để trải nghiệm trước, lên live tự tin chốt đơn.</p>
-          <ul class="kit__list" data-stagger data-ph><li><i class="ph-fill ph-check-circle" aria-hidden="true"></i>RiHair Strong Spray</li><li><i class="ph-fill ph-check-circle" aria-hidden="true"></i>RiHair Bubble Spray</li><li><i class="ph-fill ph-check-circle" aria-hidden="true"></i>RiHair Scalp Shampoo</li><li><i class="ph-fill ph-check-circle" aria-hidden="true"></i>RiHair Scalp Conditioner</li><li><i class="ph-fill ph-check-circle" aria-hidden="true"></i>Thư mời và kịch bản live</li></ul>
+          <ul class="kit__list" data-stagger data-ph><li><i class="ph-fill ph-check-circle" aria-hidden="true"></i>Dầu gội RiHair Scalp Shampoo</li><li><i class="ph-fill ph-check-circle" aria-hidden="true"></i>Dầu xả RiHair Scalp Conditioner</li><li><i class="ph-fill ph-check-circle" aria-hidden="true"></i>Xịt RiHair Strong Spray</li><li><i class="ph-fill ph-check-circle" aria-hidden="true"></i>Xịt RiHair Bubble Spray</li><li><i class="ph-fill ph-check-circle" aria-hidden="true"></i>Thư mời và kịch bản live</li></ul>
           <a href="#dang-ky" class="btn btn--primary" data-magnetic>Đăng ký nhận sample<i class="ph ph-arrow-right" aria-hidden="true"></i></a>
         </div>
-        <div class="kit__stage kit__stage--4" data-reveal aria-hidden="true"><img class="kit__img kit__img--0" src="assets/strong-spray.webp" alt="" loading="lazy"><img class="kit__img kit__img--1" src="assets/bubble-spray.webp" alt="" loading="lazy"><img class="kit__img kit__img--2" src="assets/scalp-shampoo.webp" alt="" loading="lazy"><img class="kit__img kit__img--3" src="assets/scalp-conditioner.webp" alt="" loading="lazy"></div>
+        <div class="kit__stage kit__stage--lineup" data-reveal><figure><img src="assets/scalp-shampoo.webp" alt="Scalp Shampoo" loading="lazy"><figcaption>Scalp Shampoo</figcaption></figure><figure><img src="assets/scalp-conditioner.webp" alt="Scalp Conditioner" loading="lazy"><figcaption>Scalp Conditioner</figcaption></figure><figure><img src="assets/strong-spray.webp" alt="Strong Spray" loading="lazy"><figcaption>Strong Spray</figcaption></figure><figure><img src="assets/bubble-spray.webp" alt="Bubble Spray" loading="lazy"><figcaption>Bubble Spray</figcaption></figure></div>
       </div>
       <div class="wrap"><div class="kv kv--note" data-ph><i class="ph ph-image" aria-hidden="true"></i><p>Chỗ này đặt ảnh design quà tặng &amp; thông tin chương trình</p></div></div>
     </section>
@@ -183,22 +184,18 @@
         </article>
         <div class="ranks ranks--4" data-stagger data-ph>
           <article class="rank">
-            <img class="rank__thumb" src="assets/strong-spray.webp" alt="" loading="lazy">
             <i class="ph-fill ph-medal rank__ico" aria-hidden="true"></i>
             <div><p class="rank__label">Top 2</p><p class="rank__value">7<small>M</small></p><p class="rank__note">1 e-voucher - GMV tối thiểu 25 triệu</p></div>
           </article>
           <article class="rank">
-            <img class="rank__thumb" src="assets/bubble-spray.webp" alt="" loading="lazy">
             <i class="ph-fill ph-medal rank__ico" aria-hidden="true"></i>
             <div><p class="rank__label">Top 3</p><p class="rank__value">5<small>M</small></p><p class="rank__note">1 e-voucher - GMV tối thiểu 20 triệu</p></div>
           </article>
           <article class="rank">
-            <img class="rank__thumb" src="assets/scalp-shampoo.webp" alt="" loading="lazy">
             <i class="ph-fill ph-users-three rank__ico" aria-hidden="true"></i>
             <div><p class="rank__label">Top 4 - 5</p><p class="rank__value">2<small>M</small>/giải</p><p class="rank__note">2 e-voucher - GMV tối thiểu 16 triệu</p></div>
           </article>
           <article class="rank">
-            <img class="rank__thumb" src="assets/scalp-conditioner.webp" alt="" loading="lazy">
             <i class="ph-fill ph-users-three rank__ico" aria-hidden="true"></i>
             <div><p class="rank__label">Top 6 - 10</p><p class="rank__value">1<small>M</small>/giải</p><p class="rank__note">5 e-voucher - GMV tối thiểu 10 triệu</p></div>
           </article>
@@ -213,16 +210,6 @@
             </div>
             <img class="duration__img" src="assets/prize-dryer.webp" alt="Máy sấy tóc Dyson" loading="lazy">
           </article>
-          <article class="duration" data-reveal>
-            <div>
-              <h3><i class="ph-fill ph-crown-simple" aria-hidden="true"></i>Nhiệm vụ theo ngày</h3>
-              <p class="duration__prize">9 e-voucher 1M - mỗi ngày 3 giải</p>
-              <p class="duration__note">Phiên live tối thiểu 2 tiếng và bán được ít nhất 1 đơn hàng. Mỗi creator nhận tối đa 1 giải mỗi ngày.</p>
-            </div>
-            <div class="duration__ico prize-ico" aria-hidden="true"><i class="ph-fill ph-ticket"></i></div>
-          </article>
-        </div>
-        <div class="prizes prizes--stack" data-ph>
           <article class="buyer" data-reveal>
             <div class="buyer__text">
               <h3><i class="ph-fill ph-crown-simple" aria-hidden="true"></i>Giải người mua</h3>
@@ -242,18 +229,12 @@
       <img class="decor decor--r" src="assets/strong-spray.webp" alt="" aria-hidden="true" loading="lazy">
       <div class="wrap">
         <div class="sec-head sec-head--center" data-reveal>
-          <h2>Thưởng kích hoạt creator</h2>
-          <p class="milestones" aria-label="Mốc 3, 6, 9 phiên"><b>3</b><i class="ph ph-arrow-right" aria-hidden="true"></i><b>6</b><i class="ph ph-arrow-right" aria-hidden="true"></i><b>9</b><span>phiên</span></p>
+          <h2>Thưởng thêm cho creator</h2>
         </div>
-        <div class="acts" data-stagger data-ph>
-          <article class="act"><span class="act__ico"><i class="ph-fill ph-gift ico" aria-hidden="true"></i></span><div><p class="act__title">Mốc 3 phiên</p><p class="act__formula">50 × 0.3M</p><p class="act__fund">Tổng quỹ <b>15M</b></p><p class="act__desc">Đạt 3 phiên hợp lệ</p></div></article>
-          <article class="act"><span class="act__ico"><i class="ph-fill ph-gift ico" aria-hidden="true"></i></span><div><p class="act__title">Mốc 6 phiên</p><p class="act__formula">30 × 0.8M</p><p class="act__fund">Tổng quỹ <b>24M</b></p><p class="act__desc">Đạt 6 phiên hợp lệ</p></div></article>
-          <article class="act"><span class="act__ico"><i class="ph-fill ph-gift ico" aria-hidden="true"></i></span><div><p class="act__title">Mốc 9 phiên</p><p class="act__formula">20 × 1.5M</p><p class="act__fund">Tổng quỹ <b>30M</b></p><p class="act__desc">Đạt 9 phiên hợp lệ</p></div></article>
-          <article class="act"><span class="act__ico"><i class="ph-fill ph-plant ico" aria-hidden="true"></i></span><div><p class="act__title">Thưởng tân binh</p><p class="act__formula">30 × 0.2M</p><p class="act__fund">Tổng quỹ <b>6M</b></p><p class="act__desc">Live đầu cho thương hiệu ≥120 phút, 3 đơn thành công</p></div></article>
-          <article class="act"><span class="act__ico"><i class="ph-fill ph-users-three ico" aria-hidden="true"></i></span><div><p class="act__title">Thưởng giới thiệu</p><p class="act__formula">30 × 0.1M</p><p class="act__fund">Tổng quỹ <b>3M</b></p><p class="act__desc">Mỗi creator mới đăng ký và có ≥1 phiên hợp lệ</p></div></article>
+        <div class="acts acts--2" data-stagger data-ph>
+          <article class="act"><span class="act__ico"><i class="ph-fill ph-ticket ico" aria-hidden="true"></i></span><div><p class="act__title">Nhiệm vụ theo ngày</p><p class="act__formula">9 e-voucher × 1M</p><p class="act__desc">Mỗi ngày 3 giải. Phiên live tối thiểu 2 tiếng và bán được ít nhất 1 đơn hàng. Mỗi creator nhận tối đa 1 giải mỗi ngày.</p></div></article>
           <article class="act"><span class="act__ico"><i class="ph-fill ph-chart-bar ico" aria-hidden="true"></i></span><div><p class="act__title">Commission Boost</p><p class="act__big">+3% GMV</p></div></article>
         </div>
-        <p class="note"><i class="ph ph-info" aria-hidden="true"></i>Thưởng mốc phiên chỉ nhận mốc cao nhất đạt được.</p>
       </div>
     </section>
     <section class="perks">
@@ -285,7 +266,6 @@
             <ul>
             <li><i class="ph-fill ph-seal-check" aria-hidden="true"></i>Công bố Bộ Y Tế</li>
             <li><i class="ph-fill ph-seal-check" aria-hidden="true"></i>TikTok Mall chính hãng</li>
-            <li><i class="ph-fill ph-seal-check" aria-hidden="true"></i>Tem chống giả</li>
             </ul>
           </article>
         </div>
@@ -299,7 +279,6 @@
         <p>Công ty TNHH [Tên công ty] • MST: 03xxxxxxxx</p>
         <p>Số công bố mỹ phẩm: [chờ brand cung cấp]</p>
         <p>Hotline KOC: 09xx.xxx.xxx</p>
-        <p>Zalo hỗ trợ Creator 24/7</p>
       </div>
     </div>
   </footer>
