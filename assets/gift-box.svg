@@ -1,24 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" role="img" aria-label="Hộp quà">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 140" role="img" aria-label="Hộp quà">
   <defs>
-    <linearGradient id="f" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff6b72"/><stop offset=".5" stop-color="#e02027"/><stop offset="1" stop-color="#860a0f"/></linearGradient>
-    <linearGradient id="l" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff8a90"/><stop offset="1" stop-color="#e8303a"/></linearGradient>
-    <linearGradient id="r" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#f4f5f8"/><stop offset="1" stop-color="#d5d9e0"/></linearGradient>
-    <linearGradient id="s" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".0"/><stop offset="1" stop-color="#000" stop-opacity=".28"/></linearGradient>
+    <linearGradient id="b" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#170405"/><stop offset=".3" stop-color="#4d0a0e"/><stop offset=".5" stop-color="#7a1218"/><stop offset=".72" stop-color="#4d0a0e"/><stop offset="1" stop-color="#170405"/></linearGradient>
+    <linearGradient id="v" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".55"/></linearGradient>
+    <filter id="g" x="-20%" y="-200%" width="140%" height="500%"><feGaussianBlur stdDeviation="3.2"/></filter>
   </defs>
-  <ellipse cx="100" cy="143" rx="96" ry="6" fill="#000" opacity=".3"/>
-  <!-- thân hộp -->
-  <path d="M12 30H188L182 133Q100 139 18 133Z" fill="url(#f)" stroke="#fff" stroke-opacity=".7" stroke-width="1.5"/>
-  <path d="M150 30H188L182 133Q166 135 150 136Z" fill="url(#s)"/>
-  <rect x="88" y="30" width="24" height="106" fill="url(#r)"/>
-  <!-- viền miệng hộp -->
-  <rect x="6" y="16" width="188" height="20" rx="4" fill="url(#l)" stroke="#fff" stroke-opacity=".85" stroke-width="1.5"/>
-  <rect x="88" y="16" width="24" height="20" fill="url(#r)"/>
-  <!-- nơ -->
-  <g transform="translate(100 44)" stroke="#b3121a" stroke-width="1.6" stroke-linejoin="round">
-    <path d="M-3 6L-20 40-8 34-4 44 2 8Z" fill="#e6e9ee"/><path d="M3 6L20 40 8 34 4 44-2 8Z" fill="#e6e9ee"/>
-    <path d="M0 0C-12-22-40-20-36-2-33 14-12 10 0 0Z" fill="url(#r)"/><path d="M0 0C12-22 40-20 36-2 33 14 12 10 0 0Z" fill="url(#r)"/>
-    <path d="M0 0C-9-10-24-10-25-3" fill="none" stroke-opacity=".5"/><path d="M0 0C9-10 24-10 25-3" fill="none" stroke-opacity=".5"/>
-    <rect x="-7.500" y="-7.500" width="15" height="15" rx="5" fill="#fff"/>
-  </g>
-  <g fill="#fff"><path d="M38 70l2.500 7.500 7.500 2.500-7.500 2.500-2.500 7.500-2.500-7.500-7.500-2.500 7.500-2.500z" opacity=".9"/><path d="M160 96l1.800 5.200 5.200 1.800-5.200 1.800-1.800 5.200-1.800-5.200-5.200-1.800 5.200-1.800z" opacity=".8"/><circle cx="60" cy="112" r="2" opacity=".7"/><circle cx="142" cy="60" r="2" opacity=".7"/></g>
+  <ellipse cx="100" cy="126" rx="98" ry="10" fill="#ff2a33" opacity=".35" filter="url(#g)"/>
+  <path d="M4 20A96 16 0 0 0 196 20L196 106A96 16 0 0 1 4 106Z" fill="url(#b)"/>
+  <path d="M4 20A96 16 0 0 0 196 20L196 106A96 16 0 0 1 4 106Z" fill="url(#v)"/>
+  <path d="M30 34Q34 80 32 116" stroke="#fff" stroke-opacity=".16" stroke-width="7" stroke-linecap="round" fill="none"/>
+  <path d="M4 50A96 16 0 0 0 196 50" fill="none" stroke="#ff2a33" stroke-opacity=".5" stroke-width="1.2"/>
+  <path d="M4 106A96 16 0 0 0 196 106" fill="none" stroke="#ff2a33" stroke-width="5" opacity=".8" filter="url(#g)"/>
+  <path d="M4 106A96 16 0 0 0 196 106" fill="none" stroke="#ffc9cc" stroke-width="1.6"/>
+  <path d="M4 20A96 16 0 0 0 196 20" fill="none" stroke="#ff2a33" stroke-width="7" filter="url(#g)"/>
+  <path d="M4 20A96 16 0 0 0 196 20" fill="none" stroke="#ffc9cc" stroke-width="2.4"/>
 </svg>

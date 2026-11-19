@@ -675,6 +675,14 @@ small { font-size: .62em; }
 .hl-card__ico--img, .hl-card__ico--img[src$=".svg"], .hl-card__ico--img[src*="iphone"], .hl-card__ico--img[src*="gift-"] { width: 58px; height: 58px; padding: 5px; border-radius: 14px; background: rgb(255 255 255 / .14); box-shadow: 0 0 0 2px var(--gift-neon), 0 0 16px 2px var(--gift-glow), inset 0 0 10px rgb(255 255 255 / .18); }
 .hl-card__ico--img[src*="halio"] { padding: 0; background: #fff; }
 .hero__box { position: absolute; }
+.hero__lid { position: absolute; z-index: 1; animation: gift-float 6s ease-in-out infinite alternate; }
+@media (prefers-reduced-motion: reduce) { .hero__lid { animation: none; } }
+
+/* 19/11 17:24: bỏ viền quanh ảnh quà, chỉ để nền sáng phía sau cho đỡ rối */
+.top1__img { padding: 10px; border: 0; border-radius: 0; box-shadow: none; background: radial-gradient(ellipse at 50% 52%, rgb(255 255 255 / .55) 0%, var(--gift-glow) 32%, transparent 70%); }
+.top1__img img { filter: drop-shadow(0 16px 20px rgb(0 0 0 / .45)) !important; }
+.hl-card__ico--img, .hl-card__ico--img[src$=".svg"], .hl-card__ico--img[src*="iphone"], .hl-card__ico--img[src*="gift-"] { padding: 3px; border-radius: 50%; box-shadow: none; background: radial-gradient(circle at 50% 50%, rgb(255 255 255 / .6) 0%, var(--gift-glow) 42%, transparent 72%); }
+.hl-card__ico--img[src*="halio"] { padding: 0; border-radius: 12px; background: #fff; box-shadow: 0 0 16px 2px var(--gift-glow); }
 
 /* ===== RiHair: tone đen + đỏ theo poster "Mega Live RiHair" khách gửi 13/11 (bản sáng cũ: theme-rihair-light.css.bak) ===== */
 .theme-rihair {
@@ -785,3 +793,10 @@ small { font-size: .62em; }
 .theme-rihair .hero--cards .hero__product { height: 372px; }
 @media (max-width: 1024px) { .theme-rihair .hero--cards .hero__product { height: 372px; } }
 .theme-rihair .hero__box { left: calc(50% - 113px); width: 226px; }
+/* Hộp tròn tối viền neon + nắp bay (theo key visual brand) */
+.theme-rihair .hero__product::before { bottom: 145px; width: 217px; height: 36px; clip-path: none; border-radius: 50%; background: radial-gradient(ellipse at 50% 60%, #5a0c12 0%, #170405 75%); box-shadow: 0 0 0 2px #ffc9cc, 0 0 14px 3px #ff2a33; }
+.theme-rihair .hero__product::after { bottom: 150px; }
+.theme-rihair .hero__fig--0, .theme-rihair .hero__fig--3 { bottom: 152px; }
+.theme-rihair .hero__fig--1, .theme-rihair .hero__fig--2 { bottom: 164px; }
+.theme-rihair .hero__box { left: calc(50% - 113px); width: 226px; bottom: 28px; filter: drop-shadow(0 14px 22px rgb(255 30 40 / .5)); }
+.theme-rihair .hero__lid { top: -18px; right: -26px; width: 180px; rotate: 22deg; filter: drop-shadow(0 0 14px rgb(255 42 51 / .6)); }
