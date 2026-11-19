@@ -684,6 +684,10 @@ small { font-size: .62em; }
 .hl-card__ico--img, .hl-card__ico--img[src$=".svg"], .hl-card__ico--img[src*="iphone"], .hl-card__ico--img[src*="gift-"] { padding: 3px; border-radius: 50%; box-shadow: none; background: radial-gradient(circle at 50% 50%, rgb(255 255 255 / .6) 0%, var(--gift-glow) 42%, transparent 72%); }
 .hl-card__ico--img[src*="halio"] { padding: 0; border-radius: 12px; background: #fff; box-shadow: 0 0 16px 2px var(--gift-glow); }
 
+/* 19/11 17:44: ảnh quà ở thẻ hero không bo góc/cắt ảnh nữa - để nguyên ảnh như phần quà bên dưới, vầng sáng phía sau */
+.hl-card__ico--img, .hl-card__ico--img[src$=".svg"], .hl-card__ico--img[src*="iphone"], .hl-card__ico--img[src*="gift-"] { width: 60px; height: 60px; padding: 0; border-radius: 0; object-fit: contain; box-shadow: none; background: radial-gradient(circle at 50% 50%, rgb(255 255 255 / .5) 0%, var(--gift-glow) 38%, transparent 70%); }
+.hl-card__ico--img[src*="halio"] { border-radius: 10px; background: #fff; box-shadow: 0 0 14px 2px var(--gift-glow); }
+
 /* ===== RiHair: tone đen + đỏ theo poster "Mega Live RiHair" khách gửi 13/11 (bản sáng cũ: theme-rihair-light.css.bak) ===== */
 .theme-rihair {
   --page-bg: radial-gradient(900px 600px at 6% -5%, rgb(255 30 40 / .26), transparent 60%), radial-gradient(900px 700px at 100% 40%, rgb(255 30 40 / .14), transparent 60%), #0a0506;
