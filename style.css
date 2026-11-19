@@ -590,6 +590,61 @@ small { font-size: .62em; }
   .buyer__img img[src*="gift-"] { height: 120px; }
 }
 
+/* ===== Sửa theo comment khách 17-19/11 ===== */
+/* Dải chữ chạy: chữ nằm giữa dải màu */
+.band ul { align-items: center; }
+.band li { display: flex; align-items: center; line-height: 1; }
+/* Tagline không rớt dòng */
+.hero--cards .hero__tagline { white-space: nowrap; font-size: clamp(17px, 1.9vw, 23px); }
+.hero__names { gap: 4px; }
+.hero__names li { font-size: 10px; padding: 3px 7px; }
+/* Khung thẻ nổi hơn trên nền */
+.hl-card, .countdown, .prod, .usp, .rank, .act, .info, .perk-list li, .duration { box-shadow: 0 0 0 1.5px var(--card-line), 0 0 26px -8px var(--shadow-c), 0 20px 40px -30px var(--shadow-c); }
+/* USP: hình/logo thay icon */
+.usps--3 { grid-template-columns: repeat(3, 1fr); }
+.usp__ico--img { width: 72px; height: 72px; border-radius: 14px; background: #fff; object-fit: contain; padding: 2px; }
+.usp__ico--img[src*="logo-"] { padding: 8px; }
+.usp b { font-size: 17px; }
+/* Bộ sample 3 hộp: xếp cạnh nhau, không chồng */
+.kit__stage--3 { display: flex; align-items: flex-end; justify-content: center; gap: 14px; height: auto; min-height: 240px; }
+.kit__stage--3 .kit__img { position: static; }
+.kit__stage--3 .kit__img--0, .kit__stage--3 .kit__img--1 { width: 37%; left: auto; right: auto; bottom: auto; }
+.kit__stage--3 .kit__img--2 { width: 22%; left: auto; bottom: auto; border-radius: 12px; }
+.kit__stage--lineup figcaption { font-size: 13px; max-width: 110px; line-height: 1.25; }
+/* Top 1: viền sáng làm nổi quà */
+.top1__img { position: relative; padding: 16px; border-radius: 26px; border: 2px solid var(--gift-neon); background: radial-gradient(circle at 50% 45%, rgb(255 255 255 / .2), transparent 72%); box-shadow: 0 0 30px var(--gift-glow), inset 0 0 30px var(--gift-glow); overflow: visible; clip-path: none !important; }
+.top1__img img { filter: drop-shadow(0 0 16px var(--gift-neon)) drop-shadow(0 16px 20px rgb(0 0 0 / .45)) !important; }
+/* Thẻ hạng: Top / E-Voucher XX Triệu / số giải */
+.rank__value--text { font-size: 26px; }
+/* Giải người mua: mỗi giải một hàng, ảnh ngang hàng với giải */
+.buyer--rows { display: block; }
+.buyer__row { display: grid; grid-template-columns: minmax(0, 1fr) 130px; gap: 18px; align-items: center; margin-top: 16px; padding-top: 16px; border-top: 1px solid rgb(255 255 255 / .35); }
+.buyer--rows h3 + .buyer__row { border-top: 0; padding-top: 0; }
+.buyer__sub { display: flex; align-items: center; gap: 8px; font-size: 19px; }
+.buyer__sub i { font-size: 1.15em; }
+.buyer--rows .buyer__prize { margin-top: 4px; font-size: clamp(21px, 2.2vw, 27px); font-weight: 900; line-height: 1.2; }
+.buyer--rows .buyer__prize span { font-size: .72em; font-weight: 600; white-space: nowrap; }
+.buyer--rows .buyer__rule { font-size: 14px; }
+.buyer__pic { justify-self: center; max-height: 140px; width: auto; max-width: 130px; object-fit: contain; filter: drop-shadow(0 14px 16px rgb(0 0 0 / .35)); }
+.buyer__pic[src*="gift-halio"] { border-radius: 16px; filter: none; box-shadow: 0 10px 24px -10px rgb(0 0 0 / .5); }
+/* Dải quà: bỏ vòng tròn, ảnh Halio rõ trong ô trắng */
+.gift--main .gift__img::after { display: none; }
+.gift__img img[src*="gift-halio"] { height: 74%; margin-bottom: 40px; border-radius: 22px; filter: none; -webkit-mask-image: none; mask-image: none; box-shadow: 0 0 0 2px #fff, 0 0 30px var(--gift-glow); }
+.gifts__row--4 .gift__label h3 { font-size: clamp(14px, 1.35vw, 18px); }
+.gifts__row--4 .gift--main .gift__label h3 { font-size: clamp(17px, 1.75vw, 23px); }
+.kv--note { margin-top: 20px; }
+@media (max-width: 1024px) { .usps--3 { grid-template-columns: 1fr; } }
+@media (max-width: 640px) {
+  .buyer__row { grid-template-columns: minmax(0, 1fr) 96px; gap: 12px; }
+  .buyer__pic { max-width: 96px; max-height: 110px; }
+  .kit__stage--3 { min-height: 0; gap: 8px; }
+  .top1__img { padding: 12px; }
+  .gift__img img[src*="gift-halio"] { margin-bottom: 34px; }
+}
+.kit__stage--3 .kit__img--2 { width: auto; height: 250px; border-radius: 0; }
+.kit__stage--3 .kit__img--0, .kit__stage--3 .kit__img--1 { width: 36%; }
+@media (max-width: 640px) { .kit__stage--3 .kit__img--2 { height: 150px; } }
+
 /* ===== RiHair: tone đen + đỏ theo poster "Mega Live RiHair" khách gửi 13/11 (bản sáng cũ: theme-rihair-light.css.bak) ===== */
 .theme-rihair {
   --page-bg: radial-gradient(900px 600px at 6% -5%, rgb(255 30 40 / .26), transparent 60%), radial-gradient(900px 700px at 100% 40%, rgb(255 30 40 / .14), transparent 60%), #0a0506;
@@ -664,3 +719,15 @@ small { font-size: .62em; }
 @media (max-width: 1024px) { .theme-rihair .hero--cards .hero__product { width: 264px; } }
 .theme-rihair { --gifts-bg: radial-gradient(120% 90% at 50% 0%, #6a1014 0%, #2c0a0c 55%, #120506 100%); --gifts-title: #ffffff; --gift-card: linear-gradient(180deg, #ffffff 0%, #e2e5eb 100%); --gift-ink: #1b1214; --gift-accent: #c4161c; --gift-glow: rgb(255 42 51 / .6); }
 .theme-rihair { --gift-neon: #ff6b72; --gift-card-shade: rgb(150 160 182 / .55); }
+/* 19/11: nền bớt đen, pha đỏ + đen; khung thẻ pha đỏ cho nổi; viên tiêu đề đỏ như nút Đăng ký */
+.theme-rihair {
+  --page-bg: radial-gradient(1100px 700px at 6% -5%, rgb(255 30 40 / .55), transparent 62%), radial-gradient(1000px 800px at 100% 30%, rgb(255 30 40 / .36), transparent 62%), radial-gradient(1000px 800px at 12% 70%, rgb(196 22 28 / .36), transparent 60%), radial-gradient(900px 700px at 92% 96%, rgb(255 50 60 / .3), transparent 60%), #3c0b0f;
+  --pill-bg: linear-gradient(95deg, #ff2a33, #c4161c);
+  --card: rgb(255 80 88 / .17); --card-strong: rgb(255 80 88 / .21); --card-line: rgb(255 120 126 / .65);
+  --prod-bg: linear-gradient(160deg, #70161b, #3d0b0e);
+  --kit-bg: linear-gradient(135deg, rgb(255 255 255 / .1), rgb(255 42 51 / .28));
+  --muted: #e2cfd1; --watermark: rgb(255 80 88 / .09);
+}
+.theme-rihair .top__bar, .theme-rihair .form { --muted: #6b5c5e; --card-line: #f0d9da; }
+.theme-rihair .pill { box-shadow: 0 10px 24px -12px var(--shadow-c); }
+.theme-rihair .foot { background: #1d0507; }
