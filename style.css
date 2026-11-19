@@ -645,6 +645,37 @@ small { font-size: .62em; }
 .kit__stage--3 .kit__img--0, .kit__stage--3 .kit__img--1 { width: 36%; }
 @media (max-width: 640px) { .kit__stage--3 .kit__img--2 { height: 150px; } }
 
+/* 19/11 17:03: dải quà cân xứng - các ô cao bằng nhau, ảnh cùng một tầm, quà Top 1 chỉ to hơn một chút */
+.gifts__row, .gifts__row--3, .gifts__row--4 { grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); align-items: stretch; }
+.gifts__row--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.gifts__row--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.gift { grid-template-rows: auto 1fr; }
+.gift__img, .gift--main .gift__img { height: 250px; margin-bottom: -34px; }
+.gift__img img { height: 84%; }
+.gift--main .gift__img img { height: 100%; }
+.gift__img img[src*="gift-halio"] { height: 60%; margin-bottom: 44px; }
+.gift__label, .gift--main .gift__label { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; min-height: 150px; padding: 46px 12px 18px; }
+.gift__label h3, .gifts__row--4 .gift__label h3 { font-size: clamp(14px, 1.4vw, 18px); }
+.gift--main .gift__label h3, .gifts__row--4 .gift--main .gift__label h3 { font-size: clamp(15px, 1.55vw, 20px); }
+.gift__tag { margin-top: auto; }
+.gift__label h3 { margin-bottom: 10px; }
+@media (max-width: 640px) {
+  .gifts__row, .gifts__row--3, .gifts__row--4 { grid-template-columns: 1fr 1fr; }
+  .gifts__row .gift--main { grid-column: auto; order: 0; }
+  .gifts__row--3 .gift:last-child { grid-column: 1 / -1; }
+  .gifts__row--3 .gift:last-child .gift__label { max-width: 62%; justify-self: center; }
+  .gifts__row--4 .gift:last-child { grid-column: auto; }
+  .gifts__row--4 .gift:last-child .gift__label { max-width: none; }
+  .gift__img, .gift--main .gift__img { height: 180px; margin-bottom: -28px; }
+  .gift__label, .gift--main .gift__label { min-height: 132px; padding: 38px 8px 14px; }
+  .gift__img img[src*="gift-halio"] { margin-bottom: 34px; }
+}
+
+/* 19/11 17:09: viền sáng quanh ảnh quà ở các thẻ hero cho nổi bật */
+.hl-card__ico--img, .hl-card__ico--img[src$=".svg"], .hl-card__ico--img[src*="iphone"], .hl-card__ico--img[src*="gift-"] { width: 58px; height: 58px; padding: 5px; border-radius: 14px; background: rgb(255 255 255 / .14); box-shadow: 0 0 0 2px var(--gift-neon), 0 0 16px 2px var(--gift-glow), inset 0 0 10px rgb(255 255 255 / .18); }
+.hl-card__ico--img[src*="halio"] { padding: 0; background: #fff; }
+.hero__box { position: absolute; }
+
 /* ===== RiHair: tone đen + đỏ theo poster "Mega Live RiHair" khách gửi 13/11 (bản sáng cũ: theme-rihair-light.css.bak) ===== */
 .theme-rihair {
   --page-bg: radial-gradient(900px 600px at 6% -5%, rgb(255 30 40 / .26), transparent 60%), radial-gradient(900px 700px at 100% 40%, rgb(255 30 40 / .14), transparent 60%), #0a0506;
@@ -731,3 +762,17 @@ small { font-size: .62em; }
 .theme-rihair .top__bar, .theme-rihair .form { --muted: #6b5c5e; --card-line: #f0d9da; }
 .theme-rihair .pill { box-shadow: 0 10px 24px -12px var(--shadow-c); }
 .theme-rihair .foot { background: #1d0507; }
+/* 19/11: hero - 4 sản phẩm bay lên từ hộp quà, không đè lên nhau */
+.theme-rihair { --hero-prod-w: 290px; }
+.theme-rihair .hero--cards .hero__battle { font-size: clamp(30px, 3.6vw, 46px); }
+.theme-rihair .hero--cards .hero__product { height: 360px; }
+.theme-rihair .hero__product::before { left: 50%; translate: -50% 0; bottom: 136px; width: 226px; height: 52px; border-radius: 50%; background: radial-gradient(ellipse at center, #3d0507 0%, #8f0c11 100%); box-shadow: 0 0 0 2px rgb(255 255 255 / .7), 0 -30px 70px 30px rgb(255 60 70 / .45); z-index: 1; }
+.theme-rihair .hero__fig { z-index: 2; }
+.theme-rihair .hero__fig--0 { left: 1%; bottom: 152px; rotate: -19deg; }
+.theme-rihair .hero__fig--1 { left: 26%; bottom: 170px; rotate: -6deg; }
+.theme-rihair .hero__fig--2 { left: 53%; bottom: 170px; rotate: 6deg; }
+.theme-rihair .hero__fig--3 { left: 77%; bottom: 152px; rotate: 19deg; }
+.theme-rihair .hero__fig .hero__img { height: 168px; }
+.theme-rihair .hero__fig--0 .hero__img, .theme-rihair .hero__fig--3 .hero__img { height: 156px; }
+.theme-rihair .hero__box { left: calc(50% - 110px); bottom: 30px; width: 220px; height: auto; z-index: 5; filter: drop-shadow(0 18px 22px rgb(255 30 40 / .45)); }
+@media (max-width: 1024px) { .theme-rihair .hero--cards .hero__product { width: 300px; height: 360px; } }
