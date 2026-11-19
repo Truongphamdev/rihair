@@ -776,3 +776,12 @@ small { font-size: .62em; }
 .theme-rihair .hero__fig--0 .hero__img, .theme-rihair .hero__fig--3 .hero__img { height: 156px; }
 .theme-rihair .hero__box { left: calc(50% - 110px); bottom: 30px; width: 220px; height: auto; z-index: 5; filter: drop-shadow(0 18px 22px rgb(255 30 40 / .45)); }
 @media (max-width: 1024px) { .theme-rihair .hero--cards .hero__product { width: 300px; height: 360px; } }
+/* Hộp quà vẽ lại */
+.theme-rihair .hero__product::before { bottom: 172px; width: 196px; height: 32px; border-radius: 0; clip-path: polygon(7% 0, 93% 0, 100% 100%, 0 100%); background: linear-gradient(180deg, #2e0406, #7a0c11); box-shadow: none; }
+.theme-rihair .hero__product::after { content: ""; position: absolute; left: 50%; translate: -50% 0; bottom: 168px; width: 320px; height: 220px; background: radial-gradient(ellipse at 50% 100%, rgb(255 90 100 / .55), transparent 68%); z-index: 0; pointer-events: none; }
+.theme-rihair .hero__fig--0, .theme-rihair .hero__fig--3 { bottom: 164px; }
+.theme-rihair .hero__fig--1, .theme-rihair .hero__fig--2 { bottom: 180px; }
+.theme-rihair .hero__box { left: calc(50% - 113px); width: 272px; bottom: 28px; }
+.theme-rihair .hero--cards .hero__product { height: 372px; }
+@media (max-width: 1024px) { .theme-rihair .hero--cards .hero__product { height: 372px; } }
+.theme-rihair .hero__box { left: calc(50% - 113px); width: 226px; }
