@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 300" aria-hidden="true">
+  <defs>
+    <linearGradient id="s" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".25" stop-color="#fff"/><stop offset=".7" stop-color="#ffd0d2"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <radialGradient id="bub" cx=".35" cy=".3" r=".75"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset=".35" stop-color="#ffc4c6" stop-opacity=".45"/><stop offset=".85" stop-color="#ff5a61" stop-opacity=".3"/><stop offset="1" stop-color="#fff" stop-opacity=".75"/></radialGradient>
+    <filter id="g" x="-30%" y="-300%" width="160%" height="700%"><feGaussianBlur stdDeviation="5"/></filter>
+    <filter id="g2" x="-30%" y="-300%" width="160%" height="700%"><feGaussianBlur stdDeviation="2"/></filter>
+  </defs>
+  <g transform="rotate(-10 160 190)" fill="none" stroke-linecap="round">
+    <path d="M10 190A150 55 0 0 0 310 190" stroke="#ff4a52" stroke-width="16" opacity=".75" filter="url(#g)"/>
+    <path d="M10 190A150 55 0 0 0 310 190" stroke="#fff" stroke-width="6" opacity=".6" filter="url(#g2)"/>
+    <path d="M10 190A150 55 0 0 0 310 190" stroke="url(#s)" stroke-width="2.6"/>
+  </g>
+  <g transform="rotate(13 160 160)" fill="none" stroke-linecap="round">
+    <path d="M36 160A124 40 0 0 0 284 160" stroke="#ff4a52" stroke-width="10" opacity=".55" filter="url(#g)"/>
+    <path d="M36 160A124 40 0 0 0 284 160" stroke="url(#s)" stroke-width="1.6" opacity=".9"/>
+  </g>
+  <g fill="url(#bub)" stroke="#fff" stroke-opacity=".6" stroke-width=".8">
+    <circle cx="34" cy="62" r="11"/><circle cx="290" cy="40" r="8"/><circle cx="18" cy="170" r="6"/><circle cx="300" cy="150" r="5"/><circle cx="206" cy="268" r="9"/><circle cx="96" cy="276" r="5"/><circle cx="170" cy="18" r="6"/>
+  </g>
+  <g fill="#fff"><path d="M266 92l2.200 6.600 6.600 2.200-6.600 2.200-2.200 6.600-2.200-6.600-6.600-2.200 6.600-2.200z" opacity=".9"/><path d="M60 236l1.800 5.200 5.200 1.800-5.200 1.800-1.800 5.200-1.800-5.200-5.200-1.800 5.200-1.800z" opacity=".85"/><path d="M132 40l1.500 4.500 4.500 1.500-4.500 1.500-1.500 4.500-1.500-4.500-4.500-1.500 4.500-1.500z" opacity=".8"/></g>
+</svg>

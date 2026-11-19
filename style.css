@@ -800,3 +800,21 @@ small { font-size: .62em; }
 .theme-rihair .hero__fig--1, .theme-rihair .hero__fig--2 { bottom: 164px; }
 .theme-rihair .hero__box { left: calc(50% - 113px); width: 226px; bottom: 28px; filter: drop-shadow(0 14px 22px rgb(255 30 40 / .5)); }
 .theme-rihair .hero__lid { top: -18px; right: -26px; width: 180px; rotate: 22deg; filter: drop-shadow(0 0 14px rgb(255 42 51 / .6)); }
+/* 19/11: RiHair cũng bỏ hộp quà - sản phẩm bay lơ lửng, có vòng sáng uốn lượn và bong bóng như ALFE */
+.theme-rihair .hero--cards .hero__product { height: 356px; }
+.theme-rihair .hero__product::before { left: calc(50% - 150px); translate: none; bottom: 83px; width: 300px; height: 110px; rotate: -10deg; border-radius: 50%; background: none; border: 2.5px solid rgb(255 255 255 / .8); box-shadow: 0 0 20px 5px rgb(255 60 70 / .75), inset 0 0 20px 4px rgb(255 60 70 / .6); z-index: 1; }
+.theme-rihair .hero__product::after { bottom: 44px; width: 340px; height: 300px; background: radial-gradient(ellipse at 50% 50%, rgb(255 80 90 / .6), transparent 66%); }
+.theme-rihair .hero__fig--0 { left: 0; bottom: 112px; }
+.theme-rihair .hero__fig--1 { left: 26%; bottom: 128px; }
+.theme-rihair .hero__fig--2 { left: 53%; bottom: 128px; }
+.theme-rihair .hero__fig--3 { left: 78%; bottom: 112px; }
+.theme-rihair .hero__fig .hero__img { height: 184px; }
+.theme-rihair .hero__fig--0 .hero__img, .theme-rihair .hero__fig--3 .hero__img { height: 170px; }
+.theme-rihair .hero__fig { animation: gift-float 5.5s ease-in-out infinite alternate; }
+.theme-rihair .hero__fig--1 { animation-delay: -1.4s; }
+.theme-rihair .hero__fig--2 { animation-delay: -2.8s; }
+.theme-rihair .hero__fig--3 { animation-delay: -4s; }
+.theme-rihair .hero__box { left: calc(50% - 160px); bottom: 28px; width: 320px; height: auto; filter: none; pointer-events: none; }
+@media (max-width: 1024px) { .theme-rihair .hero--cards .hero__product { height: 356px; } }
+@media (min-width: 1025px) { .theme-rihair .hero__product { margin-left: 14px; } .theme-rihair .hero__product::before { left: calc(50% - 132px); } .theme-rihair .hero__box { left: calc(50% - 142px); } }
+@media (prefers-reduced-motion: reduce) { .theme-rihair .hero__fig { animation: none; } }
