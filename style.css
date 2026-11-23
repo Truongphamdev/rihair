@@ -688,6 +688,10 @@ small { font-size: .62em; }
 .hl-card__ico--img, .hl-card__ico--img[src$=".svg"], .hl-card__ico--img[src*="iphone"], .hl-card__ico--img[src*="gift-"] { width: 60px; height: 60px; padding: 0; border-radius: 0; object-fit: contain; box-shadow: none; background: radial-gradient(circle at 50% 50%, rgb(255 255 255 / .5) 0%, var(--gift-glow) 38%, transparent 70%); }
 .hl-card__ico--img[src*="halio"] { border-radius: 10px; background: #fff; box-shadow: 0 0 14px 2px var(--gift-glow); }
 
+/* ===== Sửa theo comment khách 23/11 ===== */
+/* Chú thích dấu * / ** ngay dưới dải USP thương hiệu (A-02, R-10) */
+.usp-notes { margin-top: 10px; display: grid; gap: 2px; text-align: center; font-size: 13px; line-height: 1.45; color: var(--muted); }
+
 /* ===== RiHair: tone đen + đỏ theo poster "Mega Live RiHair" khách gửi 13/11 (bản sáng cũ: theme-rihair-light.css.bak) ===== */
 .theme-rihair {
   --page-bg: radial-gradient(900px 600px at 6% -5%, rgb(255 30 40 / .26), transparent 60%), radial-gradient(900px 700px at 100% 40%, rgb(255 30 40 / .14), transparent 60%), #0a0506;
@@ -822,3 +826,15 @@ small { font-size: .62em; }
 @media (max-width: 1024px) { .theme-rihair .hero--cards .hero__product { height: 356px; } }
 @media (min-width: 1025px) { .theme-rihair .hero__product { margin-left: 14px; } .theme-rihair .hero__product::before { left: calc(50% - 132px); } .theme-rihair .hero__box { left: calc(50% - 142px); } }
 @media (prefers-reduced-motion: reduce) { .theme-rihair .hero__fig { animation: none; } }
+/* 23/11 (R-19): hero dùng 1 ảnh hộp quà khách gửi, thay cụm 4 sản phẩm bay + vòng xoáy. Ảnh đã có nắp + đáy hộp nên bỏ vòng sáng ::before */
+.theme-rihair .hero--cards .hero__product--single { height: 380px; }
+.theme-rihair .hero__product--single::before { display: none; }
+.theme-rihair .hero__product--single::after { bottom: 30px; width: 300px; height: 300px; }
+.theme-rihair .hero--cards .hero__product--single .hero__img { position: absolute; left: 50%; bottom: 0; translate: -50% 0; height: 100%; width: auto; max-width: none; z-index: 2; filter: drop-shadow(0 18px 26px rgb(255 30 40 / .45)); animation: none; }
+@media (min-width: 1025px) { .theme-rihair .hero__product--single { margin-left: 0; } }
+@media (max-width: 1024px) { .theme-rihair .hero--cards .hero__product--single { width: min(100%, 300px); height: 360px; } }
+@media (max-width: 640px) { .theme-rihair .hero--cards .hero__product--single { height: 320px; } }
+/* 23/11 (R-08): logo Taisho sát mép dưới, bo góc 14px cắt mất chân chữ TAISHO: thêm lề trong để chữ nằm trọn trong vùng bo */
+.theme-rihair .usp__ico--img[src*="taisho"] { padding: 6px 8px; }
+/* 23/11 (R-09): huy hiệu 4 tuần SVG tự vẽ */
+.theme-rihair .usp__ico--img[src*="4-tuan"] { padding: 3px; }
