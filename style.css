@@ -836,5 +836,5 @@ small { font-size: .62em; }
 @media (max-width: 640px) { .theme-rihair .hero--cards .hero__product--single { height: 320px; } }
 /* 23/11 (R-08): logo Taisho sát mép dưới, bo góc 14px cắt mất chân chữ TAISHO: thêm lề trong để chữ nằm trọn trong vùng bo */
 .theme-rihair .usp__ico--img[src*="taisho"] { padding: 6px 8px; }
-/* 23/11 (R-09): huy hiệu 4 tuần SVG tự vẽ */
-.theme-rihair .usp__ico--img[src*="4-tuan"] { padding: 3px; }
+/* 25/11: logo 4 tuần của khách, hiện nguyên huy hiệu kèm dải ruy băng, không nền trắng */
+.theme-rihair .usp__ico--img[src*="4-tuan"] { width: 92px; height: 130px; padding: 0; border-radius: 0; background: none; filter: drop-shadow(0 6px 10px rgb(0 0 0 / .35)); }
