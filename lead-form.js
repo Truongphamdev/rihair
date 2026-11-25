@@ -9,6 +9,15 @@
   const CONFIG = Object.freeze(Object.assign({ brand: "unknown", endpoint: "", liveAt: "" }, window.LP_CONFIG || {}));
   const PHONE_RE = /^(0|\+?84)(3|5|7|8|9)\d{8}$/;
   const SUBMIT_TIMEOUT_MS = 15000;
+
+  /** Giờ Việt Nam dạng "YYYY-MM-DD HH:mm:ss", không phụ thuộc múi giờ của máy người dùng. */
+  function vietnamTime(date) {
+    const parts = new Intl.DateTimeFormat("en-CA", {
+      timeZone: "Asia/Ho_Chi_Minh", hourCycle: "h23",
+      year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", second: "2-digit",
+    }).formatToParts(date).reduce((acc, part) => Object.assign(acc, { [part.type]: part.value }), {});
+    return `${parts.year}-${parts.month}-${parts.day} ${parts.hour}:${parts.minute}:${parts.second}`;
+  }
   const UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
 
   /** Đọc UTM từ URL, lưu lại trong phiên để không mất khi khách chuyển anchor. */
@@ -108,7 +117,7 @@
         brand: CONFIG.brand,
         page_url: window.location.href.split("#")[0],
         referrer: document.referrer,
-        submitted_at: new Date().toISOString(),
+        submitted_at: vietnamTime(new Date()),
       });
 
       setState(form, "loading", "Đang gửi thông tin...");
