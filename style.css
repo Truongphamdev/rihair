@@ -232,6 +232,8 @@ small { font-size: .62em; }
 @media (max-width: 640px) { .kv--note { height: auto; min-height: 220px; } .kv--note p { font-size: 20px; } }
 .kv--rank { display: block; height: auto; aspect-ratio: 3 / 1; margin-top: 20px; background: #0b0203; }
 .kv--rank img { position: static; object-fit: contain; }
+.kv--rank picture { display: block; height: 100%; }
+@media (max-width: 640px) { .kv--rank:has(source) { aspect-ratio: 4 / 5; } }
 
 /* Product thumbs rải khắp trang */
 .band li img { height: 34px; width: auto; filter: drop-shadow(0 4px 6px rgb(0 0 0 / .25)); }
